@@ -82,7 +82,7 @@
     },
     {
       "name": "policyholder",
-      "pip": "openimis-be-policyholder==v1.7.0"
+      "pip": "git+https://github.com/Ethiopian-Health-Insurance-Service/openimis-be-policyholder_py.git@develop-ethiopia#egg=openimis-be-policyholder"
     },
     {
       "name": "contract",
