@@ -567,6 +567,7 @@ if "CHANNELS_BACKEND" in os.environ and "CHANNELS_HOST" in os.environ:
 
 
 # Django email settings
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "localhost")
@@ -580,6 +581,7 @@ EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL", False)
 DATA_UPLOAD_MAX_MEMORY_SIZE = int(os.environ.get('DATA_UPLOAD_MAX_MEMORY_SIZE', 10 * 1024 * 1024))
 
 
+
 # Insuree number validation. One can use the validator function for specific processing or just specify the length
 # and modulo for the typical use case. These two can be overridden from the environment but the validator being a
 # function, it is not possible.
@@ -591,7 +593,6 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = int(os.environ.get('DATA_UPLOAD_MAX_MEMORY_SIZE', 
 #         return []
 #
 #
-
 
 
 # There used to be a default password for zip files but for security reasons, it was removed. Trying to export
@@ -608,3 +609,4 @@ PASSWORD_UPPERCASE = int(os.getenv('PASSWORD_UPPERCASE', 1))
 PASSWORD_LOWERCASE = int(os.getenv('PASSWORD_LOWERCASE', 1))
 PASSWORD_DIGITS = int(os.getenv('PASSWORD_DIGITS', 1))
 PASSWORD_SYMBOLS = int(os.getenv('PASSWORD_SYMBOLS', 1))
+
