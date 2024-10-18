@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 
+cd /openimis-be/
+python modules-requirements.py openimis.json > modules-requirements.txt
+pip install -r requirements.txt
+pip install -r modules-requirements.txt
+pip install -e /openimis-be-location_py 
+cd /openimis-be/openIMIS/
+
+
 show_help() {
   echo """
   Commands
