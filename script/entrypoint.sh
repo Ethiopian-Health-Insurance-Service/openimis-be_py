@@ -1,6 +1,19 @@
 #!/bin/bash
 set -e
 
+cd /openimis-be/script/
+python modules-requirements.py ../openimis.json > modules-requirements.txt && pip install -r modules-requirements.txt 
+cd /openimis-be/
+pip install -r modules-requirements.txt
+pip install -e /openimis-be-location_py
+pip install -e /openimis-be-insuree_py 
+cd /openimis-be/openIMIS/
+
+echo "Starting Django..."
+python manage.py runserver 0.0.0.0:8000
+while :; do sleep 10; done
+
+
 show_help() {
   echo """
   Commands
